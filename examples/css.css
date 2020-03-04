@@ -1,9 +1,6 @@
-/* CSS File Example */
-@import url('reset.css');
-
 body {
     margin: 25px;
-    background-color: rgb(240,240,240);
+    background-color: rgb(240, 240, 240);
     font-family: arial, sans-serif;
     font-size: 14px;
 }
@@ -20,6 +17,10 @@ h1 {
     margin-top: 5px;
 }
 
-.someclass { color: red; }
+.someclass {
+    color: red;
+}
 
-#someid { color: green; }
+#someid {
+    color: green;
+}
