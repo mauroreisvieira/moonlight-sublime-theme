@@ -1,0 +1,51 @@
+{
+    "name": "moonlight-sublime-theme",
+    "version": "0.1.0",
+    "description": "A Sublime Text theme with bubblegum colors on a moonlit background.",
+    "author": "Mauro Reis Vieira <mauroreisvieira@gmail.com>",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/mauroreisvieira/moonlight-sublime-theme"
+    },
+    "keywords": [
+        "Sublime Text",
+        "Theme",
+        "Dark Theme",
+        "Moonlight",
+        "Night Theme"
+    ],
+    "scripts": {
+        "build": "ts-node src/schemes.ts",
+        "lint": "eslint \"src/*.ts\" \"src/**/*.ts\"",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "engines": {
+        "node": "^11.0.0"
+    },
+    "husky": {
+        "hooks": {
+            "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+        }
+    },
+    "dependencies": {
+        "@types/node": "^13.7.1"
+    },
+    "devDependencies": {
+        "@babel/core": "7.4.5",
+        "@babel/preset-env": "7.4.5",
+        "@commitlint/cli": "^8.3.5",
+        "@commitlint/config-conventional": "^8.3.4",
+        "@meetio/scheme-generator": "^0.5.0",
+        "@typescript-eslint/eslint-plugin": "2.15.0",
+        "@typescript-eslint/parser": "2.15.0",
+        "babel-eslint": "^10.0.3",
+        "eslint": "^6.8.0",
+        "eslint-plugin-json": "^2.0.1",
+        "glob": "^7.1.6",
+        "husky": "^4.2.1",
+        "prettier": "^1.18.2",
+        "ts-node": "^8.6.2",
+        "typescript": "^3.7.4"
+    }
+}
