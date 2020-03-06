@@ -34,6 +34,7 @@ interface IScheme {
             purple: '#c099ff',
             red: '#ff757f',
             yellow: '#ffc777',
+            deprecated: '#ffc777a1',
             invalid: '#d46c6c66',
             diffAdded: '#addb67',
             diffModified: '#e2b93d',
