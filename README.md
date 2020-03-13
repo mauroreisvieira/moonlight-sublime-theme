@@ -24,3 +24,5 @@
 **You can active this theme from:**
 
 - Typing `UI: Select Color Scheme` next find for `Moonlight` and press <kbd>ENTER</kbd>.
+
+> Project inspired on [moonlight-vscode-theme](https://github.com/atomiks/moonlight-vscode-theme/tree/master/themes) for VSCode.
