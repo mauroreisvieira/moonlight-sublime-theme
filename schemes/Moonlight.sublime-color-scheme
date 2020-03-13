@@ -321,6 +321,11 @@
             "foreground": "var(yellow)"
         },
         {
+            "name": "Meta - Mapping Key",
+            "scope": "meta.mapping.key",
+            "foreground": "var(blue)"
+        },
+        {
             "name": "META - Sections of code delineated by curly braces",
             "scope": "meta.block,punctuation.section.block.begin,punctuation.section.block.end,meta.braces,punctuation.section.braces.begin,punctuation.section.braces.end",
             "foreground": "var(cyan)"
@@ -377,7 +382,7 @@
         },
         {
             "name": "PUNCTUATION - Embedded eg: {}",
-            "scope": "punctuation.section.embedded.begin,punctuation.section.embedded.end",
+            "scope": "punctuation.section.embedded.begin,punctuation.section.embedded.end,meta.interpolation punctuation.section.interpolation.begin,meta.interpolation punctuation.section.interpolation.end",
             "foreground": "var(cyan)"
         },
         {
@@ -486,6 +491,16 @@
             "foreground": "var(foreground)"
         },
         {
+            "name": "SUPPORT - Class Component",
+            "scope": "support.class.component",
+            "foreground": "var(purple)"
+        },
+        {
+            "name": "SUPPORT - Type Primitive",
+            "scope": "support.type.primitive",
+            "foreground": "var(yellow)"
+        },
+        {
             "name": "TEXT - HTML",
             "scope": "text.html",
             "foreground": "var(foreground)"
@@ -496,8 +511,13 @@
             "foreground": "var(foreground)"
         },
         {
+            "name": "VARIABLE - Declaration",
+            "scope": "variable.declaration,variable.other",
+            "foreground": "var(brown)"
+        },
+        {
             "name": "VARIABLE - A generic variable",
-            "scope": "variable.other,variable.other.readwrite",
+            "scope": "variable.other.readwrite",
             "foreground": "var(foreground)"
         },
         {
@@ -622,22 +642,32 @@
             "foreground": "var(foreground)"
         },
         {
-            "name": "Python - Declaration function",
-            "scope": "source.python meta.function.python storage.type.function.python keyword.declaration.function.python",
+            "name": "PYTHON - Keyword declaration function",
+            "scope": "source.python keyword.declaration.function.python",
             "foreground": "var(purple)"
         },
         {
-            "name": "Python - Function",
-            "scope": "source.python meta.function.python entity.name.function.python support.function.magic.python",
+            "name": "PYTHON - Function magic",
+            "scope": "source.python support.function.magic.python",
             "foreground": "var(blue)"
         },
         {
-            "name": "Vue - Console, \"console\"",
-            "scope": "text.html.vue meta.mapping.key",
+            "name": "PYTHON - Function",
+            "scope": "source.python meta.function.python",
             "foreground": "var(blue)"
         },
         {
-            "name": "Vue - Console, \"console\"",
+            "name": "PYTHON - Qualified name",
+            "scope": "source.python meta.qualified-name.python",
+            "foreground": "var(foreground)"
+        },
+        {
+            "name": "PYTHON - Generic name",
+            "scope": "source.python variable.function.python meta.generic-name.python",
+            "foreground": "var(blue)"
+        },
+        {
+            "name": "VUE - Console, \"console\"",
             "scope": "text.html.vue meta.property.object",
             "foreground": "var(foreground)"
         },
@@ -692,19 +722,13 @@
             "foreground": "var(brown)"
         },
         {
-            "name": "Keyword Operator.",
-            "scope": "keyword.operator.module",
-            "foreground": "var(cyan)"
-        },
-        {
             "name": "[OVERWRITE] - Function declaration",
-            "scope": "meta.function entity.name.function,meta.export.default meta.function-call entity.name.function",
+            "scope": "meta.function-call,entity.name.function",
             "font_style": "glow"
         },
         {
             "name": "[OVERWRITE] - Function call",
             "scope": "variable.function",
-            "foreground": "var(cyan)",
             "font_style": "glow"
         }
     ]

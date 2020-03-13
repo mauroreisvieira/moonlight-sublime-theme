@@ -42,30 +42,16 @@ interface IScheme {
         },
         customRules: [
             {
-                name: 'Keyword Operator.',
-                scope: [
-                    'keyword.operator.module'
-                ],
-                settings: {
-                    foreground: 'var(cyan)'
-                },
-            },
-            {
                 name: '[OVERWRITE] - Function declaration',
-                scope: [
-                    'meta.function entity.name.function', 'meta.export.default meta.function-call entity.name.function'
-                ],
+                scope: ['meta.function-call', 'entity.name.function'],
                 settings: {
                     font_style: 'glow',
                 },
             },
             {
                 name: '[OVERWRITE] - Function call',
-                scope: [
-                    'variable.function'
-                ],
+                scope: ['variable.function'],
                 settings: {
-                    foreground: 'var(cyan)',
                     font_style: 'glow',
                 },
             },
