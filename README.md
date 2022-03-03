@@ -1,5 +1,9 @@
 # Moonlight
 
+**Project inspired on [Moonlight](https://github.com/atomiks/moonlight-vscode-theme).**
+
+![GitHub Sublime Text theme](./assets/screen.png)
+
 > Project inspired on [moonlight-vscode-theme](https://github.com/atomiks/moonlight-vscode-theme/tree/master/themes) for VSCode.
 
 [![GitHub tag](https://img.shields.io/github/release/mauroreisvieira/moonlight-sublime-theme.svg?style=for-the-badge)](https://github.com/mauroreisvieira/moonlight-sublime-theme/releases)
@@ -25,4 +29,4 @@
 
 **You can active this theme from:**
 
-- Typing `UI: Select Color Scheme` next find for `Moonlight` and press <kbd>ENTER</kbd>.
+-   Typing `UI: Select Color Scheme` next find for `Moonlight` and press <kbd>ENTER</kbd>.
