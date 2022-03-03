@@ -8,7 +8,8 @@
         "comments": "#637777",
         "blue": "#82aaff",
         "brown": "#c17e70",
-        "cyan": "#50c4fa",
+        "teal": "#34d3fb",
+        "cyan": "#86e1fc",
         "green": "#c3e88d",
         "orange": "#ff966c",
         "pink": "#fca7ea",
@@ -25,6 +26,10 @@
         "active_guide": "var(cyan)",
         "background": "var(background)",
         "block_caret": "var(cursor)",
+        "bracket_contents_foreground": "var(yellow)",
+        "bracket_contents_options": "underline",
+        "brackets_foreground": "var(cyan)",
+        "brackets_options": "underline",
         "caret": "var(cursor)",
         "find_highlight": "var(yellow)",
         "find_highlight_foreground": "var(background)",
@@ -34,31 +39,28 @@
         "gutter_foreground": "color(var(foreground) alpha(0.2))",
         "highlight": "var(yellow)",
         "inactive_selection": "color(var(cyan) alpha(0.1))",
+        "inactive_selection_border": "color(var(cyan) alpha(0.1))",
         "invisibles": "color(var(foreground) alpha(0.3))",
         "line_diff_added": "var(diffAdded)",
         "line_diff_deleted": "var(diffDeleted)",
         "line_diff_modified": "var(diffModified)",
         "line_diff_width": "2",
-        "rulers": "color(var(foreground) alpha(0.5))",
         "line_highlight": "color(var(foreground) alpha(0.1))",
         "misspelling": "var(red)",
+        "rulers": "color(var(foreground) alpha(0.5))",
         "selection": "color(var(foreground) alpha(0.10))",
         "selection_border": "var(cyan)",
         "selection_corner_radius": "cut",
         "selection_corner_style": "cut",
         "shadow": "color(var(background) alpha(0.5))",
         "stack_guide": "var(brown)",
-        "tags_options": "underline",
         "tags_foreground": "var(cyan)",
-        "brackets_options": "underline",
-        "brackets_foreground": "var(cyan)",
-        "bracket_contents_options": "underline",
-        "bracket_contents_foreground": "var(yellow)"
+        "tags_options": "underline"
     },
     "rules": [
         {
             "name": "COMMENTS - Single and multi-line comments should use, respectively",
-            "scope": "comment.line,comment.block",
+            "scope": "comment,comment.line,comment.block",
             "foreground": "var(comments)",
             "font_style": "italic"
         },
@@ -225,13 +227,13 @@
         {
             "name": "MARKUP - Underline",
             "scope": "markup.underline",
-            "font_style": "italic",
+            "font_style": "underline",
             "foreground": "var(purple)"
         },
         {
             "name": "MARKUP - Underline Link",
             "scope": "markup.underline.link",
-            "font_style": "italic",
+            "font_style": "italic underline",
             "foreground": "var(red)"
         },
         {
@@ -331,6 +333,11 @@
             "foreground": "var(cyan)"
         },
         {
+            "name": "META - Sections of code delineated by round braces",
+            "scope": "meta.brace.round",
+            "foreground": "var(orange)"
+        },
+        {
             "name": "META - Sections of code delineated by parentheses",
             "scope": "meta.group,punctuation.section.group.begin,punctuation.section.group.end,meta.parens,punctuation.section.parens.begin,punctuation.section.parens.end",
             "foreground": "var(cyan)"
@@ -377,7 +384,7 @@
         },
         {
             "name": "PUNCTUATION - Parameters eg: ()",
-            "scope": "punctuation.section.inheritance.begin,punctuation.section.inheritance.end,punctuation.section.arguments.begin,punctuation.section.arguments.end,punctuation.definition.parameters.begin,punctuation.definition.parameters.end,punctuation.definition.block,punctuation.definition.metadata.begin,punctuation.definition.metadata.end,meta.group.braces.round.function.arguments",
+            "scope": "punctuation.definition.group.begin,punctuation.definition.group.end,punctuation.section.inheritance.begin,punctuation.section.inheritance.end,punctuation.section.arguments.begin,punctuation.section.arguments.end,punctuation.definition.parameters.begin,punctuation.definition.parameters.end,punctuation.definition.block,punctuation.definition.metadata.begin,punctuation.definition.metadata.end,meta.group.braces.round.function.arguments",
             "foreground": "var(cyan)"
         },
         {
@@ -387,7 +394,7 @@
         },
         {
             "name": "PUNCTUATION - Parameters eg: <>",
-            "scope": "punctuation.definition.tag.begin,punctuation.definition.tag.end",
+            "scope": "punctuation.definition.tag.begin,punctuation.definition.tag.end,punctuation.definition.reference.email.end.git,punctuation.definition.reference.email.begin.git",
             "foreground": "var(cyan)"
         },
         {
@@ -612,6 +619,45 @@
             "background": "color(var(green) alpha(0.10))"
         },
         {
+            "name": "GIT - Text",
+            "scope": "text.git.commit meta.subject.git.commit markup.heading.subject.git.commit",
+            "foreground": "var(foreground)"
+        },
+        {
+            "name": "GIT - Author username",
+            "scope": "text.git.commit meta.reference.username.git entity.name.reference.username.git",
+            "font_style": "italic",
+            "foreground": "var(cyan)"
+        },
+        {
+            "name": "GIT - Author email",
+            "scope": "text.git.commit entity.name.reference.email.git",
+            "font_style": "italic",
+            "foreground": "var(blue)"
+        },
+        {
+            "name": "GIT - Comment Timestamp",
+            "scope": "text.git.commit comment.line.git.commit constant.language.timestamp.git.commit",
+            "foreground": "var(yellow)"
+        },
+        {
+            "name": "GIT - Reference number",
+            "scope": "text.git.commit meta.reference.issue.git constant.other.reference.issue.git",
+            "font_style": "bold",
+            "foreground": "var(purple)"
+        },
+        {
+            "name": "GIT - Hash number",
+            "scope": "text.git.commit meta.message.git.commit constant.other.hash.git.commit",
+            "font_style": "bold",
+            "foreground": "var(green)"
+        },
+        {
+            "name": "GIT - Resolved issue",
+            "scope": "text.git.commit keyword.other.resolved-issue.git",
+            "foreground": "var(red)"
+        },
+        {
             "name": "JS - Console, \"console\"",
             "scope": "support.type.object.console,support.class.console",
             "foreground": "var(yellow)"
@@ -739,6 +785,7 @@
         {
             "name": "[OVERWRITE] - Function call",
             "scope": "variable.function",
+            "foreground": "var(teal)",
             "font_style": "glow"
         }
     ]

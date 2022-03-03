@@ -1,4 +1,3 @@
-// @ts-ignore
 import {
     generateScheme,
     ISchemeSetting,
@@ -27,7 +26,8 @@ interface IScheme {
             comments: '#637777',
             blue: '#82aaff',
             brown: '#c17e70',
-            cyan: '#50c4fa',
+            teal: '#34d3fb',
+            cyan: '#86e1fc',
             green: '#c3e88d',
             orange: '#ff966c',
             pink: '#fca7ea',
@@ -52,6 +52,7 @@ interface IScheme {
                 name: '[OVERWRITE] - Function call',
                 scope: ['variable.function'],
                 settings: {
+                    foreground: 'var(teal)',
                     font_style: 'glow',
                 },
             },
