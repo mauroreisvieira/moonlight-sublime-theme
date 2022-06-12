@@ -27,7 +27,7 @@ interface IScheme {
             blue: '#82aaff',
             brown: '#c17e70',
             teal: '#34d3fb',
-            cyan: '#86e1fc',
+            cyan: '#b4f9f8',
             green: '#c3e88d',
             orange: '#ff966c',
             pink: '#fca7ea',
