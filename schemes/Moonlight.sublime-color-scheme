@@ -5,8 +5,13 @@
         "cursor": "#67d2ff",
         "foreground": "#bfcdf4",
         "background": "#212339",
-        "comments": "#637777",
-        "blue": "#82aaff",
+        "comments": "#7e8eda",
+        "deprecated": "#ffc777a1",
+        "invalid": "#d46c6c66",
+        "diffAdded": "#c7f59b60",
+        "diffModified": "#70b0ff60",
+        "diffDeleted": "#FF537060",
+        "blue": "#70B0FF",
         "brown": "#c17e70",
         "teal": "#34d3fb",
         "cyan": "#b4f9f8",
@@ -15,28 +20,24 @@
         "pink": "#fca7ea",
         "purple": "#c099ff",
         "red": "#ff757f",
-        "yellow": "#ffc777",
-        "deprecated": "#ffc777a1",
-        "invalid": "#d46c6c66",
-        "diffAdded": "#addb67",
-        "diffModified": "#e2b93d",
-        "diffDeleted": "#ef5350"
+        "yellow": "#FFDB8E"
     },
     "globals": {
-        "active_guide": "var(cyan)",
+        "accent": "var(blue)",
+        "active_guide": "#4E5579",
         "background": "var(background)",
         "block_caret": "var(cursor)",
         "bracket_contents_foreground": "var(yellow)",
         "bracket_contents_options": "underline",
         "brackets_foreground": "var(cyan)",
         "brackets_options": "underline",
-        "caret": "var(cursor)",
+        "caret": "#70b0ff",
         "find_highlight": "var(yellow)",
         "find_highlight_foreground": "var(background)",
         "fold_marker": "var(yellow)",
         "foreground": "var(foreground)",
         "gutter": "var(background)",
-        "gutter_foreground": "color(var(foreground) alpha(0.2))",
+        "gutter_foreground": "#5b6395",
         "highlight": "var(yellow)",
         "inactive_selection": "color(var(cyan) alpha(0.1))",
         "inactive_selection_border": "color(var(cyan) alpha(0.1))",
@@ -44,10 +45,9 @@
         "line_diff_added": "var(diffAdded)",
         "line_diff_deleted": "var(diffDeleted)",
         "line_diff_modified": "var(diffModified)",
-        "line_diff_width": "2",
-        "line_highlight": "color(var(foreground) alpha(0.1))",
-        "misspelling": "var(red)",
-        "rulers": "color(var(foreground) alpha(0.5))",
+        "line_diff_width": "5",
+        "line_highlight": "#2a2e48",
+        "misspelling": "#82aaff",
         "selection": "color(var(foreground) alpha(0.10))",
         "selection_border": "var(cyan)",
         "selection_corner_radius": "cut",
@@ -55,9 +55,61 @@
         "shadow": "color(var(background) alpha(0.5))",
         "stack_guide": "var(brown)",
         "tags_foreground": "var(cyan)",
-        "tags_options": "underline"
+        "tags_options": "underline",
+        "gutter_foreground_highlight": "#9da5d7",
+        "guide": "#4E557970"
     },
     "rules": [
+        {
+            "name": "[INI] - Color for Entity",
+            "scope": "source.ini entity,meta.embedded.block.ini,source.ini",
+            "foreground": "var(red)"
+        },
+        {
+            "name": "[INI] - Color for Keyword",
+            "scope": "source.ini keyword,keyword.other.definition.ini",
+            "foreground": "var(purple)"
+        },
+        {
+            "name": "[INI] - Color for Value",
+            "scope": "source.ini meta.declaration.ini meta.value.ini string.name.value.ini",
+            "foreground": "var(green)"
+        },
+        {
+            "name": "[Markdown] Punctuation inside inline raw",
+            "scope": "text.html.markdown meta.block-level.markdown meta.table.markdown-gfm markup.raw.inline.markdown punctuation.definition.raw.end.markdown,text.html.markdown meta.block-level.markdown meta.table.markdown-gfm markup.raw.inline.markdown punctuation.definition.raw.begin.markdown",
+            "foreground": "color(var(cyan) alpha(0.8))"
+        },
+        {
+            "name": "[Markdown] - Color for Punctuation — Heading, `Code` and fenced ```code blocks```, **Bold**, _Italic_",
+            "scope": "punctuation.definition.raw.begin.markdown,punctuation.definition.raw.end.markdown,punctuation.definition.raw.code-fence.begin.markdown,punctuation.definition.raw.code-fence.end.markdown,punctuation.definition.heading.begin.markdown,punctuation.definition.bold.begin.markdown,punctuation.definition.bold.end.markdown,punctuation.definition.italic.begin.markdown,punctuation.definition.italic.end.markdown",
+            "foreground": "color(var(background) blend(var(foreground) 75%))"
+        },
+        {
+            "name": "[SublimeLinter] Error",
+            "scope": "sublimelinter.mark.error",
+            "foreground": "var(invalid)"
+        },
+        {
+            "name": "[SublimeLinter] Gutter mark",
+            "scope": "sublimelinter.gutter-mark",
+            "foreground": "var(blue)"
+        },
+        {
+            "name": "[Vue] Function Parameter",
+            "scope": "text.html.vue source.js.embedded.html source.js meta.export.js meta.object-literal.js meta.object-literal.js meta.function.declaration.js meta.binding.name.js variable.parameter.function.js",
+            "foreground": "var(pink)"
+        },
+        {
+            "name": "[Vue] Object",
+            "scope": "text.html.vue source.js.embedded.html source.js meta.export.js meta.object-literal.js meta.object-literal.key.js",
+            "foreground": "var(purple)"
+        },
+        {
+            "name": "[Vue] Object Value",
+            "scope": "text.html.vue source.js.embedded.html source.js meta.export.js meta.object-literal.js meta.function.js meta.block.js meta.object-literal.js meta.object-literal.js meta.object-literal.key.js",
+            "foreground": "var(brown)"
+        },
         {
             "name": "COMMENTS - Single and multi-line comments should use, respectively",
             "scope": "comment,comment.line,comment.block",
@@ -113,6 +165,31 @@
             "foreground": "var(pink)"
         },
         {
+            "name": "Message Error",
+            "scope": "message.error",
+            "background": "var(red)"
+        },
+        {
+            "name": "DIFF - Deleted",
+            "scope": "diff.deleted",
+            "background": "color(var(diffDeleted) alpha(0.20))"
+        },
+        {
+            "name": "DIFF - Deleted Char",
+            "scope": "diff.deleted.char",
+            "background": "color(var(diffDeleted) alpha(0.20))"
+        },
+        {
+            "name": "DIFF - Inserted",
+            "scope": "diff.inserted",
+            "background": "color(var(diffAdded) alpha(0.20))"
+        },
+        {
+            "name": "DIFF - Inserted Char",
+            "scope": "diff.inserted.char",
+            "background": "color(var(diffAdded) alpha(0.20))"
+        },
+        {
             "name": "ENTITY - The names of data structures",
             "scope": "entity.name.class,entity.name.struct,entity.name.enum,entity.name.union,entity.name.trait,entity.name.interface,entity.name.impl,entity.name.type",
             "foreground": "var(yellow)"
@@ -130,7 +207,8 @@
         {
             "name": "ENTITY - Function names receive one of the following scopes",
             "scope": "entity.name.function,entity.name.function.constructor,entity.name.function.destructor",
-            "foreground": "var(blue)"
+            "foreground": "var(blue)",
+            "font_style": "glow"
         },
         {
             "name": "ENTITY - Namespaces, packages and modules use the following scope",
@@ -320,7 +398,8 @@
         {
             "name": "META - Function names, including the full path, and all parameters",
             "scope": "meta.function-call",
-            "foreground": "var(yellow)"
+            "foreground": "var(yellow)",
+            "font_style": "glow"
         },
         {
             "name": "Meta - Mapping Key",
@@ -560,23 +639,13 @@
         {
             "name": "VARIABLE - Function and method name",
             "scope": "variable.function",
-            "foreground": "var(blue)"
+            "foreground": "var(blue)",
+            "font_style": "glow"
         },
         {
             "name": "VARIABLE - The final label in an identifier that is part of an annotation",
             "scope": "variable.annotation",
             "foreground": "var(yellow)"
-        },
-        {
-            "name": "HTML - Attribute name ID",
-            "scope": "meta.attribute-with-value.id. entity.other.attribute-name.id",
-            "foreground": "var(purple)"
-        },
-        {
-            "name": "HTML - Attribute name ID",
-            "scope": "meta.attribute-with-value.id. string.quoted.double. meta.toc-list.id.",
-            "foreground": "var(green)",
-            "font_style": "normal"
         },
         {
             "name": "CSS - Attribute name ID",
@@ -599,24 +668,15 @@
             "foreground": "var(purple)"
         },
         {
-            "name": "DIFF - Deleted",
-            "scope": "diff.deleted",
-            "background": "color(var(red) alpha(0.10))"
+            "name": "HTML - Attribute name ID",
+            "scope": "meta.attribute-with-value.id. entity.other.attribute-name.id",
+            "foreground": "var(purple)"
         },
         {
-            "name": "DIFF - Deleted Char",
-            "scope": "diff.deleted.char",
-            "background": "color(var(red) alpha(0.10))"
-        },
-        {
-            "name": "DIFF - Inserted",
-            "scope": "diff.inserted",
-            "background": "color(var(green) alpha(0.10))"
-        },
-        {
-            "name": "DIFF - Inserted Char",
-            "scope": "diff.inserted.char",
-            "background": "color(var(green) alpha(0.10))"
+            "name": "HTML - Attribute name ID",
+            "scope": "meta.attribute-with-value.id. string.quoted.double. meta.toc-list.id.",
+            "foreground": "var(green)",
+            "font_style": "normal"
         },
         {
             "name": "GIT - Text",
@@ -728,65 +788,14 @@
             "foreground": "var(foreground)"
         },
         {
-            "name": "[INI] - Color for Entity",
-            "scope": "source.ini entity,meta.embedded.block.ini,source.ini",
+            "name": "YAML - Key",
+            "scope": "entity.name.tag.yaml",
             "foreground": "var(red)"
         },
         {
-            "name": "[INI] - Color for Keyword",
-            "scope": "source.ini keyword,keyword.other.definition.ini",
-            "foreground": "var(purple)"
-        },
-        {
-            "name": "[INI] - Color for Value",
-            "scope": "source.ini meta.declaration.ini meta.value.ini string.name.value.ini",
+            "name": "YAML - String",
+            "scope": "source.yaml string.unquoted",
             "foreground": "var(green)"
-        },
-        {
-            "name": "[Markdown] Punctuation inside inline raw",
-            "scope": "text.html.markdown meta.block-level.markdown meta.table.markdown-gfm markup.raw.inline.markdown punctuation.definition.raw.end.markdown,text.html.markdown meta.block-level.markdown meta.table.markdown-gfm markup.raw.inline.markdown punctuation.definition.raw.begin.markdown",
-            "foreground": "color(var(cyan) alpha(0.8))"
-        },
-        {
-            "name": "[Markdown] - Color for Punctuation — Heading, `Code` and fenced ```code blocks```, **Bold**, _Italic_",
-            "scope": "punctuation.definition.raw.begin.markdown,punctuation.definition.raw.end.markdown,punctuation.definition.raw.code-fence.begin.markdown,punctuation.definition.raw.code-fence.end.markdown,punctuation.definition.heading.begin.markdown,punctuation.definition.bold.begin.markdown,punctuation.definition.bold.end.markdown,punctuation.definition.italic.begin.markdown,punctuation.definition.italic.end.markdown",
-            "foreground": "color(var(background) blend(var(foreground) 75%))"
-        },
-        {
-            "name": "[SublimeLinter] Error",
-            "scope": "sublimelinter.mark.error",
-            "foreground": "var(invalid)"
-        },
-        {
-            "name": "[SublimeLinter] Gutter mark",
-            "scope": "sublimelinter.gutter-mark",
-            "foreground": "var(blue)"
-        },
-        {
-            "name": "[Vue] Function Parameter",
-            "scope": "text.html.vue source.js.embedded.html source.js meta.export.js meta.object-literal.js meta.object-literal.js meta.function.declaration.js meta.binding.name.js variable.parameter.function.js",
-            "foreground": "var(pink)"
-        },
-        {
-            "name": "[Vue] Object",
-            "scope": "text.html.vue source.js.embedded.html source.js meta.export.js meta.object-literal.js meta.object-literal.key.js",
-            "foreground": "var(purple)"
-        },
-        {
-            "name": "[Vue] Object Value",
-            "scope": "text.html.vue source.js.embedded.html source.js meta.export.js meta.object-literal.js meta.function.js meta.block.js meta.object-literal.js meta.object-literal.js meta.object-literal.key.js",
-            "foreground": "var(brown)"
-        },
-        {
-            "name": "[OVERWRITE] - Function declaration",
-            "scope": "meta.function-call,entity.name.function",
-            "font_style": "glow"
-        },
-        {
-            "name": "[OVERWRITE] - Function call",
-            "scope": "variable.function",
-            "foreground": "var(teal)",
-            "font_style": "glow"
         }
     ]
 }

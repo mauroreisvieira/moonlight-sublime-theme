@@ -16,11 +16,11 @@
         "purple": "#c099ff",
         "red": "#ff757f",
         "yellow": "#ffc777",
-        "deprecated": "#ffc777a1",
-        "invalid": "#d46c6c66",
-        "diffAdded": "#addb67",
-        "diffModified": "#e2b93d",
-        "diffDeleted": "#ef5350"
+        "deprecated": "#baacff",
+        "invalid": "#FF5370",
+        "diffAdded": "#c7f59b60",
+        "diffModified": "#70b0ff60",
+        "diffDeleted": "#FF537060"
     },
     "globals": {
         "active_guide": "var(cyan)",

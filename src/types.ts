@@ -1,8 +1,11 @@
-import { IColors, IRules } from '@meetio/scheme-generator';
+import { SchemeSetting } from '@meetio/scheme-generator';
 
-export interface IScheme {
+export interface IScheme extends Omit<SchemeSetting, 'colors'> {
     name: string;
     author: string;
-    variables: { teal: string } & IColors;
-    customRules: IRules[];
+    colors: {
+        base: {
+            teal: string;
+        }
+    } & SchemeSetting['colors']
 }
