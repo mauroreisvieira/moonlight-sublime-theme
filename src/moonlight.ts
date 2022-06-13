@@ -8,9 +8,10 @@ export const scheme: IScheme = {
     name: 'Moonlight',
     author: 'Mauro Reis Vieira <mauroreisvieira@gmail.com>',
     colors: {
-        cursor: '#67d2ff',
-        foreground: '#bfcdf4',
-        background: '#212339',
+        foreground: '#e4f3fa',
+        background: '#212539',
+        accent: '#70b0ff',
+        cursor: 'var(accent)',
         comments: '#7e8eda',
         base: {
             blue: '#70B0FF',
@@ -33,8 +34,6 @@ export const scheme: IScheme = {
     ui: {
         ...ui,
         ...{
-            accent: 'var(blue)',
-            caret: '#70b0ff',
             line_highlight: '#2a2e48',
             line_diff_width: '5',
             gutter_foreground: '#5b6395',
@@ -42,7 +41,6 @@ export const scheme: IScheme = {
             guide: '#4E557970',
             active_guide: '#4E5579',
             misspelling: '#82aaff',
-            background: 'var(background)',
         },
     },
     rules: [

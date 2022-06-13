@@ -2,9 +2,10 @@
     "name": "Moonlight",
     "author": "Mauro Reis Vieira <mauroreisvieira@gmail.com>",
     "variables": {
-        "cursor": "#67d2ff",
-        "foreground": "#bfcdf4",
-        "background": "#212339",
+        "foreground": "#e4f3fa",
+        "background": "#212539",
+        "accent": "#70b0ff",
+        "cursor": "var(accent)",
         "comments": "#7e8eda",
         "deprecated": "#ffc777a1",
         "invalid": "#d46c6c66",
@@ -23,7 +24,7 @@
         "yellow": "#FFDB8E"
     },
     "globals": {
-        "accent": "var(blue)",
+        "accent": "var(accent)",
         "active_guide": "#4E5579",
         "background": "var(background)",
         "block_caret": "var(cursor)",
@@ -31,7 +32,7 @@
         "bracket_contents_options": "underline",
         "brackets_foreground": "var(cyan)",
         "brackets_options": "underline",
-        "caret": "#70b0ff",
+        "caret": "var(cursor)",
         "find_highlight": "var(yellow)",
         "find_highlight_foreground": "var(background)",
         "fold_marker": "var(yellow)",
